@@ -7,6 +7,9 @@ import { ThemeStore } from '../../mobx/theme';
 import FriendListScreen from '../../screens/friend/friend-list';
 import FriendRequestScreen from '../../screens/friend/friend-request';
 import SettingScreen from '../../screens/setting/setting';
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
+import { faGear, faInbox, faUserGroup, faUserPlus } from '@fortawesome/free-solid-svg-icons';
+import { scale } from '../../styles/scale';
 
 const Tab = createBottomTabNavigator();
 
@@ -16,9 +19,16 @@ const HomeNavigator = () => {
 
     const screenOptions = {
         tabBarStyle:{
-            height: 58,
+            height: 60,
             paddingBottom: 10,
             paddingTop: 10,
+            position: 'absolute',
+            bottom: 10,
+            left: 10,
+            right: 10,
+
+            backgroundColor: ThemeStore.theme.LightColor,
+            borderRadius: 10,
         },
 
         tabBarItemStyle:{
@@ -35,17 +45,18 @@ const HomeNavigator = () => {
                 name="ChatList" 
                 component={ChatListScreen} 
                 options={{
-                    tabBarLabel: t("hn-dashboard"),
+                    tabBarLabel: t("hn-chat"),
                     headerShown: false,
+                    tabBarShowLabel: false,
                     tabBarActiveTintColor: ThemeStore.theme.PrimaryColor,
                     tabBarLabelStyle: {
                         fontWeight: '600',
                     },
                     tabBarIcon: ({focused}) => (
                         (focused)?
-                        <Image style={styles.imgTabBarIcon} source={require('../../../assets/icon/homeScreen/home-active.png')}/>
+                        <FontAwesomeIcon icon={faInbox} color={ThemeStore.theme.PrimaryColor} size={scale(24)}/>
                         :
-                        <Image style={styles.imgTabBarIcon} source={require('../../../assets/icon/homeScreen/home-inactive.png')}/>
+                        <FontAwesomeIcon icon={faInbox} color={ThemeStore.theme.SecondColor} size={scale(24)}/>
                     ),
                 }}
             />
@@ -54,17 +65,18 @@ const HomeNavigator = () => {
                 name="FriendList" 
                 component={FriendListScreen} 
                 options={{
-                    tabBarLabel: t("hn-transactions"),
+                    tabBarLabel: t("hn-friend"),
                     headerShown: false,
+                    tabBarShowLabel: false,
                     tabBarActiveTintColor: ThemeStore.theme.PrimaryColor,
                     tabBarLabelStyle: {
                         fontWeight: '600',
                     },
                     tabBarIcon: ({focused}) => (
                         (focused)?
-                        <Image style={styles.imgTabBarIcon} source={require('../../../assets/icon/homeScreen/wallet-active.png')}/>
+                        <FontAwesomeIcon icon={faUserGroup} color={ThemeStore.theme.PrimaryColor} size={scale(24)}/>
                         :
-                        <Image style={styles.imgTabBarIcon} source={require('../../../assets/icon/homeScreen/wallet-inactive.png')}/>
+                        <FontAwesomeIcon icon={faUserGroup} color={ThemeStore.theme.SecondColor} size={scale(24)}/>
                     ),
                 }}
             />
@@ -73,17 +85,18 @@ const HomeNavigator = () => {
                 name="FriendRequest" 
                 component={FriendRequestScreen} 
                 options={{
-                    tabBarLabel: t("hn-budgets"),
+                    tabBarLabel: t("hn-request"),
                     headerShown: false,
+                    tabBarShowLabel: false,
                     tabBarActiveTintColor: ThemeStore.theme.PrimaryColor,
                     tabBarLabelStyle: {
                         fontWeight: '600',
                     },
                     tabBarIcon: ({focused}) => (
                         (focused)?
-                        <Image style={styles.imgTabBarIcon} source={require('../../../assets/icon/homeScreen/money-active.png')}/>
+                        <FontAwesomeIcon icon={faUserPlus} color={ThemeStore.theme.PrimaryColor} size={scale(24)}/>
                         :
-                        <Image style={styles.imgTabBarIcon} source={require('../../../assets/icon/homeScreen/money-inactive.png')}/>
+                        <FontAwesomeIcon icon={faUserPlus} color={ThemeStore.theme.SecondColor} size={scale(24)}/>
                     ),
                 }}
             />
@@ -92,17 +105,18 @@ const HomeNavigator = () => {
                 name="Setting" 
                 component={SettingScreen} 
                 options={{
-                    tabBarLabel: t("hn-menu"),
+                    tabBarLabel: t("hn-setting"),
                     headerShown: false,
+                    tabBarShowLabel: false,
                     tabBarActiveTintColor: ThemeStore.theme.PrimaryColor,
                     tabBarLabelStyle: {
                         fontWeight: '600',
                     },
                     tabBarIcon: ({focused}) => (
                         (focused)?
-                        <Image style={styles.imgTabBarIcon} source={require('../../../assets/icon/homeScreen/menu-active.png')}/>
+                        <FontAwesomeIcon icon={faGear} color={ThemeStore.theme.PrimaryColor} size={scale(24)}/>
                         :
-                        <Image style={styles.imgTabBarIcon} source={require('../../../assets/icon/homeScreen/menu-inactive.png')}/>
+                        <FontAwesomeIcon icon={faGear} color={ThemeStore.theme.SecondColor} size={scale(24)}/>
                     ),
                 }}
             />
