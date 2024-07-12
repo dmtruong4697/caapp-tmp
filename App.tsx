@@ -1,23 +1,13 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
 import { NavigationContainer } from '@react-navigation/native';
 import React from 'react';
-import {
-  SafeAreaView,
-  View,
-} from 'react-native';
+import MainNavigator from './src/navigators/main';
 
 
 function App(): React.JSX.Element {
 
   return (
     <NavigationContainer>
-      <View/>
+      <MainNavigator/>
     </NavigationContainer>
   );
 }
