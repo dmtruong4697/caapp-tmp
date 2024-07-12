@@ -2,6 +2,11 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Image, TouchableOpacity, View } from 'react-native';
 import { styles } from './styles';
 import { useTranslation } from 'react-i18next';
+import ChatListScreen from '../../screens/chat/chat-list';
+import { ThemeStore } from '../../mobx/theme';
+import FriendListScreen from '../../screens/friend/friend-list';
+import FriendRequestScreen from '../../screens/friend/friend-request';
+import SettingScreen from '../../screens/setting/setting';
 
 const Tab = createBottomTabNavigator();
 
@@ -17,7 +22,6 @@ const HomeNavigator = () => {
         },
 
         tabBarItemStyle:{
-            // backgroundColor: 'pink'
         },
 
         tabBarHideOnKeyboard: true,
@@ -25,15 +29,15 @@ const HomeNavigator = () => {
 
     return (
         <Tab.Navigator
-        {...{ screenOptions }}
+            {...{ screenOptions }}
         >
             <Tab.Screen 
-                name="Dashboard" 
-                component={DashboardScreen} 
+                name="ChatList" 
+                component={ChatListScreen} 
                 options={{
                     tabBarLabel: t("hn-dashboard"),
                     headerShown: false,
-                    tabBarActiveTintColor: colors.PrimaryColor,
+                    tabBarActiveTintColor: ThemeStore.theme.PrimaryColor,
                     tabBarLabelStyle: {
                         fontWeight: '600',
                     },
@@ -47,12 +51,12 @@ const HomeNavigator = () => {
             />
 
             <Tab.Screen 
-                name="Transaction" 
-                component={TransactionScreen} 
+                name="FriendList" 
+                component={FriendListScreen} 
                 options={{
                     tabBarLabel: t("hn-transactions"),
                     headerShown: false,
-                    tabBarActiveTintColor: colors.PrimaryColor,
+                    tabBarActiveTintColor: ThemeStore.theme.PrimaryColor,
                     tabBarLabelStyle: {
                         fontWeight: '600',
                     },
@@ -66,25 +70,12 @@ const HomeNavigator = () => {
             />
 
             <Tab.Screen 
-                name="AddTransaction" 
-                component={AddTransactionScreen} 
-                options={{
-                    headerShown: false,
-                    tabBarLabel: "",
-                    tabBarIcon: () => (
-                        <Image style={styles.imgAddIcon} source={require('../../../assets/icon/homeScreen/add-transaction.png')}/>
-                    ),
-                    
-                }}
-            />
-
-            <Tab.Screen 
-                name="Budget" 
-                component={BudgetScreen} 
+                name="FriendRequest" 
+                component={FriendRequestScreen} 
                 options={{
                     tabBarLabel: t("hn-budgets"),
                     headerShown: false,
-                    tabBarActiveTintColor: colors.PrimaryColor,
+                    tabBarActiveTintColor: ThemeStore.theme.PrimaryColor,
                     tabBarLabelStyle: {
                         fontWeight: '600',
                     },
@@ -98,12 +89,12 @@ const HomeNavigator = () => {
             />
 
             <Tab.Screen 
-                name="Menu" 
-                component={MenuScreen} 
+                name="Setting" 
+                component={SettingScreen} 
                 options={{
                     tabBarLabel: t("hn-menu"),
                     headerShown: false,
-                    tabBarActiveTintColor: colors.PrimaryColor,
+                    tabBarActiveTintColor: ThemeStore.theme.PrimaryColor,
                     tabBarLabelStyle: {
                         fontWeight: '600',
                     },
