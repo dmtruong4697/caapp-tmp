@@ -17,11 +17,7 @@ const ChatListScreen: React.FC<IProps>  = () => {
 
   return (
     <SafeAreaView style={styles.viewContainer}>
-        <InputField
-            title='Password'
-            isPassword
-            placeHolder='password'
-        />
+      
     </SafeAreaView>
   )
 }

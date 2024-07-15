@@ -18,7 +18,7 @@ const Button: React.FC<IProps> = ({title, onPress, containerStyle, titleStyle, t
   return (
     <TouchableOpacity
         style={[styles.btnContainer,{
-            backgroundColor: (type == 'solid')? colors.White:ThemeStore.theme.PrimaryColor,
+            backgroundColor: (type == 'solid')? 'transparent':ThemeStore.theme.PrimaryColor,
             borderColor: (type == 'solid')? colors.GrayBorder:ThemeStore.theme.PrimaryColor,
         }, containerStyle]}
         onPress={onPress}

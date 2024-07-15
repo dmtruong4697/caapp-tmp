@@ -6,7 +6,7 @@ export const styles = StyleSheet.create({
     viewContainer: {
         width: '100%',
         flexDirection: 'column',
-        marginBottom: scale(14),
+        marginBottom: scale(0),
     },
 
     inputContainer: {
@@ -31,7 +31,7 @@ export const styles = StyleSheet.create({
 
     txtTitle: {
         fontSize: 16,
-        fontWeight: '500',
+        fontWeight: '600',
         color: colors.PrimaryText,
         marginBottom: scale(8),
     },

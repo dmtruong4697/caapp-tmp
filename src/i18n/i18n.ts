@@ -7,6 +7,7 @@ import zh from './languages/zh.json';
 i18n
   .use(initReactI18next) // passes i18n down to react-i18next
   .init({
+    compatibilityJSON: 'v3',
     resources: {
       en: en,
       vi: vi,
