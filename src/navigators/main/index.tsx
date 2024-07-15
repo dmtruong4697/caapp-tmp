@@ -35,7 +35,7 @@ export const RangeContext = createContext<any>(null);
 const MainNavigator = () => {
 
   return (
-    <Stack.Navigator initialRouteName="Home">
+    <Stack.Navigator initialRouteName="Login">
         {/* <Stack.Screen 
             name="Splash" 
             component={SplashScreen}

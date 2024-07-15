@@ -14,7 +14,8 @@ export const AppTheme: Theme[] = [
         PrimaryColor: "#468585",
         SecondColor: "#50B498",
         LightColor: "#DEF9C4",
-        ChatItemColor: "#9CDBA6",
+        // ChatItemColor: "#9CDBA6",
+        ChatItemColor: '#50b498',
     },
     {
         id: 2,
