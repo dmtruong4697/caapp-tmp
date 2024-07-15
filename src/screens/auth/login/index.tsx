@@ -35,7 +35,7 @@ const LoginScreen: React.FC<IProps>  = () => {
       //     });
       navigation.navigate('Home');
       setIsLoading(false);
-      console.log(getValues());
+      // console.log(getValues());
     };
 
   return (

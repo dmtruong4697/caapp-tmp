@@ -9,7 +9,7 @@ export const colors = {
 
     // text color
     PrimaryText: '#111111',
-    SecondText: '#666666',
+    SecondText: '#ADB5BD',
     InputText: '#707070',
     PlaceholderText: '#c2c2c2',
     
